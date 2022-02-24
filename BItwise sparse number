@@ -1,0 +1,21 @@
+int main(){
+boost
+    int b,count=0,prev_bit=0;
+    cin>>b;
+    while(b)
+    {
+        int temp=b&1;
+        if(temp==1 && prev_bit==1)
+        {
+            cout<<"Not sparse";
+            return 0;
+        }
+        if(temp==1)
+            prev_bit=1;
+        else
+            prev_bit=0;
+        b=b>>1;
+    }
+    cout<<"sparse number";
+    return 0;
+}
