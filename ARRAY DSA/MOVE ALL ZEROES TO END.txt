@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#define boost ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+using namespace std;
+void remZero(int arr[],int n)
+{
+    int index;
+    bool flag=false;
+    for(int i=0;i<n;)
+    {
+         if(arr[i]==0 && flag ==false)
+        {
+            flag=true;
+            index=i;
+        }
+        else if(arr[i] && flag==true)
+        {
+            arr[index]=arr[i];
+            arr[i]=0;
+            flag = false;
+            continue;
+        }
+        i++;
+
+    }
+
+}
+
+int main(){
+boost
+    int arr[]={10,20};
+    int n=sizeof(arr)/sizeof(int);
+    remZero(arr,n);
+    for(int i=0;i<n;i++)
+        cout<<arr[i]<<" ";    
+    return 0;
+}
